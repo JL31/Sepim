@@ -20,7 +20,7 @@ __status = 'dev'
 # ==================================================================================================
 
 import os
-import matplotlib.image as mpimg
+from PIL import Image
 from Sepim.modules.objet_image import ObjetImage
 import numpy
 
@@ -150,7 +150,7 @@ class GestionnaireDImage(object):
         # Chargement de l'image
         try:
 
-            self.__image_chargee = mpimg.imread(self.__nom_de_l_image_a_traiter)
+            self.__image_chargee = numpy.array(Image.open(self.__nom_de_l_image_a_traiter))
 
         except Exception:
 
@@ -275,7 +275,6 @@ class GestionnaireDImage(object):
 
                 extraction_terminee = True
 
-
     # ===================================
     def sauvegarde_des_sous_images(self):
         """
@@ -301,7 +300,8 @@ class GestionnaireDImage(object):
                 pass
 
             # sauvegarde de l'image
-            mpimg.imsave(nom_absolu_du_fichier_a_enregistrer, image.get_donnees_image())
+            image_a_enregistrer = Image.fromarray(image.get_donnees_image())
+            image_a_enregistrer.save(nom_absolu_du_fichier_a_enregistrer)
 
 # ==================================================================================================
 # FONCTIONS
