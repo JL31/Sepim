@@ -102,7 +102,7 @@ class ObjetImage(object):
         """
             Accesseur de l'attribut __limite_basse
 
-            :return: limite_basse
+            :return: __limite_basse
             :rtype: long
         """
 
@@ -113,7 +113,7 @@ class ObjetImage(object):
         """
             Accesseur de l'attribut __limite_droite
 
-            :return: limite_droite
+            :return: __limite_droite
             :rtype: long
         """
 
@@ -128,15 +128,34 @@ class ObjetImage(object):
         return self.__donnees_image
 
     # =================================
+    def set_limite_haute(self, valeur):
+        """
+            Mutateur de l'attribut __limite_haute
+
+            :param valeur: nouvelle valeur pour l'attribut __limite_haute
+            :type valeur: long
+        """
+
+        self.__limite_haute = valeur
+
+    # ==================================
+    def set_limite_gauche(self, valeur):
+        """
+            Mutateur de l'attribut __limite_gauche
+
+            :param valeur: nouvelle valeur pour l'attribut __limite_gauche
+            :type valeur: long
+        """
+
+        self.__limite_gauche = valeur
+
+    # =================================
     def set_limite_basse(self, valeur):
         """
             Mutateur de l'attribut __limite_basse
 
             :param valeur: nouvelle valeur pour l'attribut __limite_basse
             :type valeur: long
-
-            :return: limite_basse
-            :rtype: long
         """
 
         self.__limite_basse = valeur
@@ -148,9 +167,6 @@ class ObjetImage(object):
 
             :param valeur: nouvelle valeur pour l'attribut __limite_droite
             :type valeur: long
-
-            :return: limite_droite
-            :rtype: long
         """
 
         self.__limite_droite = valeur

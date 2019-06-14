@@ -64,7 +64,8 @@ class GestionnaireDesImagesATraiter(object):
         self.__dico_des_images_a_traiter = {}
         self.__dossier_contenant_les_images = "../Donnees"
         self.__extensions_prises_en_charge = ("*.png", )
-        self.__couleur_de_separation = numpy.array([181, 230, 29, 255])
+        self.__couleur_de_separation = numpy.array([181, 230, 29])
+        # envisager un séparateur magenta plutôt que vert ?
 
     # ======================================
     def get_dico_des_images_a_traiter(self):
@@ -100,6 +101,9 @@ class GestionnaireDesImagesATraiter(object):
 
             # Extractions des sous-images
             gestionnaire_de_l_image_a_traiter.extraction_des_sous_images()
+
+            # Rotation des sous-images
+            gestionnaire_de_l_image_a_traiter.rotation_des_sous_images()
 
             # Sauvegarde des images
             gestionnaire_de_l_image_a_traiter.sauvegarde_des_sous_images()

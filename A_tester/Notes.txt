@@ -1,0 +1,2 @@
+
+logiciel de dessin vectoriel (pour créer des icônes) : inkscape
